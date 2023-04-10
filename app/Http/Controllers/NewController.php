@@ -102,8 +102,10 @@ class NewController extends Controller
 
     public function like($id){
 
-        $noticias = Noticias::findOrFail($id);
+        Noticias::findOrFail($id);
         
+        alert()->html('<i>Você curtiu nossa publicação</i>',"<b>Sua opinião é muito importante para nós</b>,",'info');
+
         return redirect('/');
     }
 

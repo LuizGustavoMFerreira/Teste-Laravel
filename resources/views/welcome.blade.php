@@ -23,7 +23,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-warning">Deletar</button>
                     </form>
-                    <button type="button" class="btn btn-danger" id="like">Curti</button>
+                    <a href="/noticias/like/{{ $noticia->id }}" class="btn btn-danger"><i class="fa-solid fa-thumbs-up"></i></a>
                 </div>
             </div>
             @endforeach
@@ -31,10 +31,12 @@
     </div>
 
     <script>
-        $(document).ready(function(){
-            $.get("#like").click(function(){
-                alert($($this))
-            })
+        $.ajax({
+            url: '/noticias/like/',
+            type: 'post',
+            dataType: 'json'      
+        }).then( response =>{
+           console.log("bdfiuebfiwef");
         });
     </script>
 

@@ -25,6 +25,7 @@ Route::get('/noticias/information/{id}', [NewController::class, 'show']);
 Route::delete('/noticias/{id}', [NewController::class, 'destroy']);
 
 Route::get('/noticias/edit/{id}', [NewController::class, 'edit']);
+Route::get('/noticias/like/{id}', [NewController::class, 'like']);
 Route::put('/noticias/update/{id}', [NewController::class, 'update']);
 
 Route::post('/noticias', [NewController::class, 'store']);
